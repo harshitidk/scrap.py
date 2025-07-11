@@ -57,17 +57,18 @@ for product_page in product_pages:
     product_names.append(product_name)
 
     #getting sizes
+    i=0
     while True:
-    try:
-        label = soup.find('label', for_='template--19401590440153__main-1-' + str(i))
-        if label is None:
-            break  # Exit loop if no more labels found
-        sizes.append(label.text.strip())
-        i += 1
-    except Exception as e:
-        print("Error occurred:", e)
-        break
-    
+        try:
+            label = soup.find('label', for_='template--19401590440153__main-1-' + str(i))
+            if label is None:
+                break  # Exit loop if no more labels found
+            sizes.append(label.text.strip())
+            i += 1
+        except Exception as e:
+            print("Error occurred:", e)
+            break
+
 # print(product_prices)
 # print(product_names)
 
